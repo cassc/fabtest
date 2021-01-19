@@ -16,8 +16,8 @@ public class Tools {
     public static final boolean enablePrint = true;
 
     // path to public and privates used in the test
-    public static final String PUB_KEY_PATH = "/home/garfield/projects/hyperledger/openssl/publickey.pem";
-    public static final String PRV_KEY_PATH = "/home/garfield/projects/hyperledger/openssl/privatekey-pkcs8.pem";
+    public static final String PUB_KEY_PATH = "openssl/publickey.pem";
+    public static final String PRV_KEY_PATH = "openssl/privatekey-pkcs8.pem";
 
     public static String publicKeyAsString() throws Exception {
         return Base64.getEncoder().encodeToString(OpenSsl.loadPublicKeyFromFile(PUB_KEY_PATH).getEncoded());
