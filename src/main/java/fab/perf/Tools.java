@@ -3,14 +3,16 @@ package fab.perf;
 import java.util.Base64;
 
 public class Tools {
+    public static final String GATEWAY_HOST = "http://localhost:9997";
+
     // number of accounts to create
     public static final int NUM_ACCOUNTS = 10;
 
     // total number of requests to send
-    public static final int MAX_REQS = 100;
+    public static final int MAX_REQS = 1000;
 
     // number of threads to use to perform the test, set to 0 to use cpu_count
-    public static final int NUM_THREADS = 0;
+    public static final int NUM_THREADS = 4;
 
     // print the results from each requests
     public static final boolean enablePrint = true;

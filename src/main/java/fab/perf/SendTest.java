@@ -64,7 +64,7 @@ public class SendTest {
                     "toId", to,
                     "amount", amount);
             String sig = OpenSsl.sign(s, OpenSsl.loadPrivateKeyFromFile(PRV_KEY_PATH));
-            URI uri = new URIBuilder("http://localhost:9997/send")
+            URI uri = new URIBuilder(GATEWAY_HOST+"/send")
                     .addParameter("fromId", from)
                     .addParameter("toId", to)
                     .addParameter("amount", String.valueOf(amount))

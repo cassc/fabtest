@@ -10,15 +10,14 @@ import org.apache.http.util.EntityUtils;
 
 import java.net.URI;
 
-import static fab.perf.Tools.NUM_ACCOUNTS;
-import static fab.perf.Tools.publicKeyAsString;
+import static fab.perf.Tools.*;
 
 public class InitAccounts {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Creating " + NUM_ACCOUNTS + " accounts ...");
         for (int i = 0; i < NUM_ACCOUNTS; i++) {
-            URI uri = new URIBuilder("http://localhost:9997/account")
+            URI uri = new URIBuilder(GATEWAY_HOST + "/account")
                     .addParameter("accountId", "a"+i)
                     .addParameter("balance", String.valueOf(9989889.898))
                     .addParameter("publicKey", publicKeyAsString())

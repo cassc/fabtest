@@ -61,7 +61,7 @@ public class BalanceTest {
             String timestamp = String.valueOf(System.currentTimeMillis());
             String s = String.format("%s%s%s%s", id, timestamp, "accountId", accountId);
             String sig = OpenSsl.sign(s, OpenSsl.loadPrivateKeyFromFile(PRV_KEY_PATH));
-            URI uri = new URIBuilder("http://localhost:9997/balance")
+            URI uri = new URIBuilder(GATEWAY_HOST + "/balance")
                     .addParameter("accountId", accountId)
                     .addParameter("id", id)
                     .addParameter("timestamp", timestamp)
